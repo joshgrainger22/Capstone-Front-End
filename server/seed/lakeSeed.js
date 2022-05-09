@@ -1,4 +1,6 @@
 const db = require('../db')
+const { Lakes } = require ('../models')
+
 
 const lakes = [
     {
