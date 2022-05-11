@@ -3,7 +3,7 @@ const controllers = require('../controllers')
 const router = Router()
 
 
-router.get('/topscorers', controllers.getAllTopScorers)
+router.get('/lakes', controllers.getAllLakes)
 
 router.get('/getAllPosts', controllers.getAllPost)
 

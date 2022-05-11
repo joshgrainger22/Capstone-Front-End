@@ -1,10 +1,4 @@
-const db = require('../db')
-const { Lakes } = require ('../models')
-
-db.on('error', console.error.bind(console, 'MongoDB connection error:'))
-
-const main = async () => {
-const lakes = [
+export default [
     {
         name: 'Crawford State Lake',
         location: 'Farlington, Kansas',
@@ -54,12 +48,3 @@ const lakes = [
         image: 'https://www.planetware.com/wpimages/2021/03/us-best-lakes-hanging-lake-colorado-waterfall.jpg'
     },        
 ]
-
-await Lakes.insertMany(lakes)
-console.log('players added')
-}
-const run = async () => {
-    await main()
-    db.close()
-}
-run()

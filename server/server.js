@@ -1,32 +1,24 @@
 const express = require('express')
 const cors = require('cors')
-const logger = require('morgan')
+// const routes = require('./routes') 
 const db = require('./db')
-const { Lakes } = require('./models')
-const mongoose = require('mongoose')
-const PORT = process.env.PORT || 3001
 const bodyParser = require('body-parser')
-const { response } = require('express')
-const res = require('express/lib/response')
+const logger = require('morgan')
+const PORT = process.env.PORT || 3001
 
 const app = express()
 
 app.use(cors())
-app.use(express.json())
+app.use(bodyParser.json())
 app.use(logger('dev'))
+app.use(express.static(`${__dirname}/client/build`))      
 
-app.get('/', (request, response) => {
-    response.send('This is Root!')
-})
+// app.use('/api', routes)
+   
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-app.get('api/lakes', async (request, response) => {
-    const alllakes = await Lakes.find()
-    console.log('All Lakes')
-    res.json(alllakes)
-})
+// app.get('/*', (req, res) => {
+//     res.sendFile(`${__dirname}/client/build/index.html`)
+//    })
 
-
-
-app.listen(PORT, () => {
-    console.log(`Express server listening on port ${PORT}`)
-})
+app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`))

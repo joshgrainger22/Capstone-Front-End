@@ -12,7 +12,7 @@ const getAllLakes = async (req, res) => {
 const getAllComments = async (req, res) => {
     try {
       const comments = await Comment.find()
-      return res.status(200).json({ comments })
+      return res.status(200).json({ comments }) 
     } catch (err) {
       return res.status(500).send(err.message)
     }
