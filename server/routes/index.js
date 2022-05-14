@@ -9,6 +9,8 @@ router.get('/getAllPosts', controllers.getAllPost)
 
 router.post('/createPost', controllers.createPost)
 
+router.post('/createLake', controllers.createLake)
+
 router.post('/createComment', controllers.createComment)
 
 router.get('/getAllComments', controllers.getAllComments)

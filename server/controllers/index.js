@@ -29,6 +29,18 @@ const getAllComments = async (req, res) => {
       return res.status(500).json({ error: error.message })
     }
   }
+  const createLake = async (req, res) => {
+    try {
+      const lake = await new Lakes(req.body)
+      console.log(req.body)
+      await lake.save()
+      return res.status(201).json({
+        post
+      })
+    } catch (error) {
+      return res.status(500).json({ error: error.message })
+    }
+  }
   const createComment = async (req, res) => {
     try {
       const comment = await new Comment(req.body)
@@ -69,6 +81,8 @@ const getAllComments = async (req, res) => {
     } catch (error) {}
   };
 
+
+
 module.exports = {
     getAllLakes,
     getAllPost,
@@ -76,6 +90,6 @@ module.exports = {
     createPost,
     getAllComments,
     deleteComment,
-    updateComment
-
+    updateComment,
+    createLake
   }
