@@ -1,6 +1,6 @@
 const { Schema } = require ('mongoose')
 
-const Lakes = new Schema(
+const AllLakes = new Schema(
     {
         name: { type: String, required: true},
         location: { type: String, required: true},
@@ -11,4 +11,4 @@ const Lakes = new Schema(
     {timestamps: true}
 )
 
-module.exports = Lakes
+module.exports = AllLakes

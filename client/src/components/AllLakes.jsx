@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Lakes(props) {
+export default function AllLakes(props) {
   return (
 
     <div className='image-container'>
@@ -9,6 +9,8 @@ export default function Lakes(props) {
 
     <div className='container-grid'>
         <h1> {props.name}</h1>
+        <h4> {props.description}</h4>
+        <h4> {props.location}</h4>
 
     </div>
     </div>

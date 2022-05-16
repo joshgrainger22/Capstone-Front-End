@@ -1,10 +1,10 @@
 const db = require('../db')
-const { Lakes } = require ('../models')
+const { AllLakes } = require ('../models')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-const lakes = [
+const allLakes = [
     {
         name: 'Crawford State Lake',
         location: 'Farlington, Kansas',
@@ -55,7 +55,7 @@ const lakes = [
     },        
 ]
 
-await Lakes.insertMany(lakes)
+await AllLakes.insertMany(allLakes)
 console.log('players added')
 }
 const run = async () => {
