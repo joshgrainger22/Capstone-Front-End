@@ -5,7 +5,7 @@
 
 ***
 ### Languages Used In This Project
-Postgresql   |
+Mongoose   |
 Express   |
 React   |
 Node
