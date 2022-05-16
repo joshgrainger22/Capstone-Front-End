@@ -2,7 +2,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import './styles/App.css'
 import axios from 'axios'
-import Navigation from './components/Navigation'
+import Header from './components/Header'
 import Comment from './components/Comment'
 import FeedPage from './pages/FeedPage'
 
@@ -31,17 +31,20 @@ export default function App() {
 }, [])
 
 return (
-  <div className='App'>
+    <div>
     <header className='App-Header'>Header</header>
+    <Header/>
+  <div className='App'>
     <main>
       <div>
         <Comment allComments={allComments} />
-        <Navigation />
         <Routes>
+          <Route index element={<FeedPage />} />
           <Route exact path ="/lakes" element={<FeedPage allLakes={allLakes}/>}/>
         </Routes>
       </div>
     </main>
+  </div>
   </div>
 )
 

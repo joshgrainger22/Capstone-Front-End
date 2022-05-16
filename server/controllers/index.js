@@ -1,4 +1,4 @@
-const { AllLakes, Comment } = require('../models')
+const { AllLakes, Comment, Post} = require('../models')
 
 
 const getAllLakes = async (req, res) => {

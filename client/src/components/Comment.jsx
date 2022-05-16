@@ -3,9 +3,6 @@ import React from 'react'
 import { useState } from 'react'
 import Delete from '../components/Delete' 
 import Update from './Update'
-//import { createComments } from '../services/CitiesAttracService'
-//import { CreateCommentsAction } from '../store/actions/CitiesAttracAction'
-//import { useNavigate } from 'react-router-dom'
 
 const Comment = (props) => {
   console.log(props)

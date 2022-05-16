@@ -2,18 +2,18 @@ import React from 'react'
 
 export default function AllLakes(props) {
   return (
-
-    <div className='image-container'>
-        <img src={props.image} id="lake-image"/>
-        <div classname ="card">
-
     <div className='container-grid'>
-        <h1> {props.name}</h1>
-        <h4> {props.description}</h4>
-        <h4> {props.location}</h4>
+    {/* <div className="card game-card">
+    <div className="img-wrapper"> */}
+      <img src={props.image} alt="Lake" />
 
+      <div className="container-grid">
+        {/* <h1> {props.name}</h1>
+        <h3> {props.description}</h3>
+        <h3> {props.location}</h3> */}
     </div>
     </div>
-    </div>
+    // </div>
+    // </div>
   )
 }
