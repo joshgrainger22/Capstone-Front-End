@@ -30,8 +30,8 @@ const Comment = (props) => {
       {props.allComments.map((comments) => {
         return (
           <div>
-        <p> name:{comments.name} </p>
-        <p> text:{comments.text}</p>
+        <p> Name:{comments.name} </p>
+        <p> {comments.text}</p>
         <Delete id={comments._id}/>
         <Update text={comments.text}/>
       </div> 

@@ -1,5 +1,9 @@
-header {
+body { 
   background-color: #212121;
+}
+
+header {
+  background-color: #8e0101;
   display: flex;
   justify-content: flex-start;
   align-items: center;
