@@ -31,9 +31,9 @@ const getAllComments = async (req, res) => {
   }
   const createLake = async (req, res) => {
     try {
-      const lake = await new Lakes(req.body)
+      const allLakes = await new AllLakes(req.body)
       console.log(req.body)
-      await lake.save()
+      await allLakes.save()
       return res.status(201).json({
         post
       })
