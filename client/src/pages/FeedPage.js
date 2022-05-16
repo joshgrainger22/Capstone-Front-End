@@ -1,6 +1,6 @@
 import React from 'react'
 import AllLakes from '../components/AllLakes'
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 
 export default function FeedPage(props) {
     console.log(props.allLakes)
@@ -8,7 +8,7 @@ export default function FeedPage(props) {
         <div>
             <div className='card'>
             {props.allLakes.map((allLakes) => {
-                return(
+                return (
                     <AllLakes key={allLakes._id}
                     name={allLakes.name}
                     description={allLakes.description}

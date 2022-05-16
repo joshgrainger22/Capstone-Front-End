@@ -1,10 +1,10 @@
-const { Lakes, Comment } = require('../models')
+const { AllLakes, Comment } = require('../models')
 
 
 const getAllLakes = async (req, res) => {
     try {
-      const lakes = await Lakes.find()
-      return res.status(200).json({ lakes })
+      const allLakes = await AllLakes.find()
+      return res.status(200).json({ allLakes })
     } catch (err) {
       return res.status(500).send(err.message)
     }

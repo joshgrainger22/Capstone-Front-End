@@ -15,7 +15,7 @@ export default function App() {
 
   const getAllLakes = async () => {
     const result = await axios.get(`${BASE_URL}/lakes`)
-    console.log(result.data.lakes)
+    console.log(result.data.alllakes)
     setAllLakes(result.data.allLakes)
   }
 

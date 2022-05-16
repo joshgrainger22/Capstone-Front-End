@@ -56,7 +56,7 @@ const allLakes = [
 ]
 
 await AllLakes.insertMany(allLakes)
-console.log('players added')
+console.log('Lakes Added')
 }
 const run = async () => {
     await main()
