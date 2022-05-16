@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'React'
+import './styles/App.css'
+import axios from 'axios'
+import Navigation from './components/Navigation'
+import Comment from './components/Comment'
+import LakesPage from './pages/LakesPage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const BASE_URL = 'http://localhost:3001/api'
+
+export default function App() {
+  const [allLakes, setAllLakes] = useState([])
+  const [allComments, setAllComments] = useState([])
+
+  const getAllLakes = async () => {
+    const result = await axios.get(`${BASE_URL}/lakes`)
+    console.log(result.data.lakes)
+    setAllLakes(result.data.allLakes)
+  }
+
+  useEffect( () => {
+    getAllLakes()
+}, [])
+
 }
-
-export default App;
