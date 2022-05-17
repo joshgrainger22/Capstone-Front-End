@@ -33,7 +33,7 @@ const Comment = (props) => {
         <p> Name:{comments.name} </p>
         <p> {comments.text}</p>
         <Delete id={comments._id}/>
-        <Update text={comments.text}/>
+        <Update id={comments._id}/>
       </div> 
         )})}
 

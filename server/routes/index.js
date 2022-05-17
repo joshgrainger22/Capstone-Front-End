@@ -17,7 +17,7 @@ router.get('/getAllComments', controllers.getAllComments)
 
 router.delete('/getAllComments/:id', controllers.deleteComment);
 
-router.put('/getAllComments/:id', controllers.updateComment)
+router.put('/getAllComments/edit/:id', controllers.updateComment)
 
 
 module.exports = router

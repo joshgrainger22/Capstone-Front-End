@@ -4,7 +4,7 @@ import AllLakes from '../components/AllLakes'
 
 export default function FeedPage(props) {
     console.log(props.allLakes)
-    return (
+    if (props) return (
         <div>
             <div className='card'>
             {props.allLakes.map((allLakes) => {
@@ -20,4 +20,7 @@ export default function FeedPage(props) {
             </div>
         </div>
     )
+    else { return (
+        <h1>Loading</h1>
+    )}
 }

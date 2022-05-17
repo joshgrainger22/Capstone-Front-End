@@ -2,35 +2,40 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 
-export default function Update({text}) {
-    const url ='http://localhost:3001/api/getAllComments'
+export default function Update({text, id}) {
+    const url ='http://localhost:3001/api/getAllComments/edit'
 
-  const [comments, setComments] = useState('')
+  const [comments, setComments] = useState({text: ''})
   const [update, setUpdate] = useState(false)
 
   const updateComments = async (e) => {
       e.preventDefault()
-    await axios.put(`${url}/${text}`, {comments}).then((res) => { 
-        setComments(res.data.comments)
-    })
+      console.log("edited comment", comments)
+      // const payload = {
+      //   text: comments 
+      // }
+    //   console.log(comments)
+    //   console.log(id)
+    const res = await axios.put(`${url}/${id}`, comments) 
+    console.log(res)
+    //     setComments(res.data.comments)
+    // })
       window.location.reload(true)
   }
-  console.log(comments)
   return (
     <div>
         {update ? (
-          <form onSubmit={updateComments}>
+          <form onSubmit={(e) => updateComments(e)}>
             <label>Edit Comment</label>
             <div>
-              {/* <input type="text" id={'name'} placeholder={'name'} onChange={(e) => onChange(e)} /> */}
               <textarea
-              id='text'
+              name='text'
                 className="comments-input"
                 placeholder="Add your comment here"
-                onChange={(e) => setComments(e.target.value)}
+                onChange={(e) => setComments({...comments, [e.target.name]:e.target.value})}
               />
             </div>
-            <button>Submit</button>
+            <button type='submit'>Submit</button>
           </form>
         ) : (
           <button

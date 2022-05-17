@@ -8,12 +8,12 @@ const DetailsPage = () => {
 
   const [detailsPage, setLakeDetails] = useState({})
 
-  let { lakeId } = useParams()
+  let { LakesId } = useParams()
 
   useEffect(() => {
     let isCancelled = false
     const getLakeDetails = async () => {
-      const response = await axios.get(allLakes)
+      const response = await axios.get(AllLakes)
       if (!isCancelled) {
         setLakeDetails(response.data)
       }
@@ -22,7 +22,7 @@ const DetailsPage = () => {
     return () => {
       isCancelled = true
     }
-  }, [LakeId])
+  }, [LakesId])
 
   return (
    <div>

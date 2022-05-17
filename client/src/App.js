@@ -5,6 +5,7 @@ import axios from 'axios'
 import Header from './components/Header'
 import Comment from './components/Comment'
 import FeedPage from './pages/FeedPage'
+import LakeDetails from './pages/LakeDetails'
 
 const BASE_URL = 'http://localhost:3001/api'
 
@@ -39,7 +40,7 @@ return (
       <div>
         <Comment allComments={allComments} />
         <Routes>
-          <Route index element={<FeedPage />} />
+          <Route path='/allLakes/:id' element={<LakeDetails allLakes={allLakes} />} />
           <Route exact path ="/lakes" element={<FeedPage allLakes={allLakes}/>}/>
         </Routes>
       </div>

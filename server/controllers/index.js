@@ -75,9 +75,10 @@ const getAllComments = async (req, res) => {
   const updateComment = async (req, res) => {
     try {
       const { id } = req.params;
-      await Comment.findByIdAndUpdate(id, req.body, { new: true }, (err, data) => {
-        return res.status(200).json(data);
-      });
+      console.log(id)
+      const data = await Comment.findOneAndUpdate(id, req.body, { new: true } )
+      console.log(data)
+      return res.status(200).json(data);
     } catch (error) {}
   };
 
