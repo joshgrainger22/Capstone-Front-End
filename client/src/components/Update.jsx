@@ -11,16 +11,14 @@ export default function Update({text, id}) {
   const updateComments = async (e) => {
       e.preventDefault()
       console.log("edited comment", comments)
-      // const payload = {
-      //   text: comments 
-      // }
     //   console.log(comments)
     //   console.log(id)
     const res = await axios.put(`${url}/${id}`, comments) 
-    console.log(res)
+    // console.log(res)
+    console.log(id)
     //     setComments(res.data.comments)
     // })
-      window.location.reload(true)
+      // window.location.reload(true)
   }
   return (
     <div>
